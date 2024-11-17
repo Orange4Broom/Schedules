@@ -1,0 +1,31 @@
+@use '@styles/colors' as *;
+@use '@styles/variables' as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 10px 20px;
+
+  .form__submit-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    background-color: $primary;
+    color: $secondary;
+    cursor: pointer;
+    transition: background-color 0.4s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary, 10%);
+      color: $secondary;
+    }
+  }
+}
