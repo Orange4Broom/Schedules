@@ -1,0 +1,30 @@
+@use '@styles/colors' as *;
+@use '@styles/variables' as *;
+
+.radio-button {
+  padding: 10px 20px;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  background-color: $secondary;
+  color: $tertiary;
+  cursor: pointer;
+  transition: background-color 0.4s ease, color 0.3s ease;
+  max-width: 300px;
+  text-align: center;
+
+  &:hover {
+    background-color: $primary;
+    color: $secondary;
+  }
+
+  &--selected {
+  background-color: $primary;
+  color: $secondary;
+  border-color: $primary;
+  font-weight: 500;
+  }
+
+  &__input {
+    display: none;
+  }
+}
