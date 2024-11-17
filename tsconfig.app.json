@@ -28,7 +28,11 @@
       "@hooks/*": ["./src/hooks/*"],
       "@elements/*": ["./src/components/elements/*"],
       "@blocks/*": ["./src/components/blocks/*"],
-      "@fbase/*": ["./src/firebase/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@tables/*": ["./src/assets/tables/*"],
+      "@schedules/*": ["./src/assets/schedules/*"],
+      "@styles/*": ["./src/styles/*"],
     },
   },
   "include": ["src"]

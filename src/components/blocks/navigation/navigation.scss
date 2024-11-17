@@ -1,0 +1,17 @@
+@use '@styles/colors' as *;
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 100%;
+  min-height: 40px;
+  padding: 10px 40px;
+  border-bottom: 1px solid $border-color;
+
+  &__image {
+    height: 50px;
+  }
+}

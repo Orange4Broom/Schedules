@@ -12,7 +12,18 @@ export default defineConfig({
       '@hooks': path.resolve(__dirname, 'src/hooks/'),
       '@elements': path.resolve(__dirname, 'src/components/elements/'),
       '@blocks': path.resolve(__dirname, 'src/components/blocks/'),
-      '@fbase': path.resolve(__dirname, 'src/firebase/'),
+      '@layouts': path.resolve(__dirname, 'src/layouts/'),
+      '@assets': path.resolve(__dirname, 'src/assets/'),
+      '@tables': path.resolve(__dirname, 'src/assets/tables/'),
+      '@schedules': path.resolve(__dirname, 'src/assets/schedules/'),
+      '@styles': path.resolve(__dirname, 'src/styles/'),
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+      },
     },
   },
 });

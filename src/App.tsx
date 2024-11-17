@@ -1,7 +1,10 @@
-export const App = () => {
+import { DefaultLayout } from '@layouts/defaultLayout/DefaultLayout';
+import { FC } from 'react';
+
+export const App: FC = () => {
   return (
-    <div>
-      <h1>Bruh</h1>
-    </div>
+    <DefaultLayout>
+      <h1>Hello, world!</h1>
+    </DefaultLayout>
   );
 };
