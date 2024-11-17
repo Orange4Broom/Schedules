@@ -33,6 +33,7 @@
       "@tables/*": ["./src/assets/tables/*"],
       "@schedules/*": ["./src/assets/schedules/*"],
       "@styles/*": ["./src/styles/*"],
+      "@data/*": ["./src/data/*"],
     },
   },
   "include": ["src"]

@@ -17,6 +17,7 @@ export default defineConfig({
       '@tables': path.resolve(__dirname, 'src/assets/tables/'),
       '@schedules': path.resolve(__dirname, 'src/assets/schedules/'),
       '@styles': path.resolve(__dirname, 'src/styles/'),
+      '@data': path.resolve(__dirname, 'src/data/'),
     },
   },
   css: {
