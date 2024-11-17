@@ -22,3 +22,18 @@ body {
   height: 100vh;
   width: 100%;
 }
+
+.alert {
+  color: $alert;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.radio-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
