@@ -11,6 +11,7 @@ export interface Section {
 }
 
 export interface Option {
-  value: number | boolean;
+  value: number;
+  type?: 'play' | 'win';
   label: string;
 }
