@@ -12,9 +12,11 @@
   max-width: 300px;
   text-align: center;
 
-  &:hover {
-    background-color: $primary;
-    color: $secondary;
+  @media (min-width: 768px) {
+    &:hover {
+      background-color: $primary;
+      color: $secondary;
+    }
   }
 
   &--selected {
@@ -28,3 +30,4 @@
     display: none;
   }
 }
+

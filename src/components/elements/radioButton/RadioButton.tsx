@@ -3,8 +3,8 @@ import './radioButton.scss';
 
 interface RadioButtonProps {
   name: string;
-  value: number | boolean;
-  onChange: (value: number | boolean) => void;
+  value: number;
+  onChange: (value: number) => void;
   label: string;
   isChecked: boolean;
 }
