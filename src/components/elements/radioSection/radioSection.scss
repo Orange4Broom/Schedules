@@ -1,9 +1,49 @@
+@use '@styles/colors' as *;
+@use '@styles/variables' as *;
+@use 'sass:color';
+
 .radio-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+  }
+
+  &__title {
+    font-weight: 700;
+    color: $primary;
+  }
+
+  &__remove-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    background-color: $primary;
+    color: $secondary;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.4s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: color.adjust($primary, $lightness: -10%);
+      color: $secondary;
+    }
+  }
 
   &__options {
   display: flex;
@@ -12,5 +52,7 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+
+  max-width: 900px;
 }
 }
