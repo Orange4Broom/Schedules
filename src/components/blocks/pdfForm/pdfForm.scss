@@ -30,5 +30,11 @@
       background-color: color.adjust($primary, $lightness: -10%);
       color: $secondary;
     }
+
+    &:disabled {
+      background-color: $border-color;
+      color: $tertiary;
+      cursor: not-allowed;
+    }
   }
 }
