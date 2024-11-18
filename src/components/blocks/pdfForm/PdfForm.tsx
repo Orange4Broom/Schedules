@@ -5,11 +5,13 @@ import './pdfForm.scss';
 import { Icon } from '@/components/elements/icon/Icon';
 
 export const PdfForm = () => {
-  const [selectedOptions, setSelectedOptions] = useState<
-    (number | string | boolean)[]
-  >([]);
+  const [teamCount, setTeamCount] = useState<number>(0);
+  const [playstyleType, setPlaystyleType] = useState<number>(3);
+  const [playRules, setPlayRules] = useState<number>(0);
 
-  console.log(selectedOptions);
+  console.log('TeamCount', teamCount);
+  console.log('PlaystyleType', playstyleType);
+  console.log('PlayRules', playRules);
 
   return (
     <form className="form">
@@ -21,35 +23,15 @@ export const PdfForm = () => {
               name={section.name}
               title={section.title}
               section={section}
-              setSelectedOptions={setSelectedOptions}
-              selectedOptions={selectedOptions}
+              teamCount={teamCount}
+              setTeamCount={setTeamCount}
+              playstyleType={playstyleType}
+              setPlaystyleType={setPlaystyleType}
+              playRules={playRules}
+              setPlayRules={setPlayRules}
             />
           );
         }
-
-        if (section.type === 'number') {
-          return (
-            <input
-              key={section.name}
-              type="number"
-              name={section.name}
-              placeholder={section.title}
-              className="form__input"
-            />
-          );
-        }
-
-        if (section.type === 'text') {
-          return (
-            <textarea
-              key={section.name}
-              name={section.name}
-              placeholder={section.title}
-              className="form__textarea"
-            />
-          );
-        }
-
         return null;
       })}
       <button className="form__submit-button">
