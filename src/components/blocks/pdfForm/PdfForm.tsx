@@ -50,24 +50,25 @@ export const PdfForm = () => {
           return null;
         })
       }
-      < button
-        type="submit"
-        className="form__submit-button"
-        disabled={teamCount === 0 || playstyleType === 3}
-        onClick={handleDownloadPdf}
+      <div className='form__submit-buttons'>
+        <button
+          type="submit"
+          className="form__submit-button"
+          disabled={teamCount === 0 || playstyleType === 3}
+          onClick={handleDownloadPdf}
+        >
+          Stáhnout PDF < Icon name="file" type="fas" />
+        </button>
+        <button
+          type="button"
+          className="form__submit-button"
+          disabled={teamCount === 0 || playstyleType === 3}
+          onClick={handleShowPdf}
 
-      >
-        Stáhnout PDF < Icon name="file" type="fas" />
-      </button >
-      < button
-        type="button"
-        className="form__submit-button"
-        disabled={teamCount === 0 || playstyleType === 3}
-        onClick={handleShowPdf}
-
-      >
-        Zobrazit PDF < Icon name="eye" type="fas" />
-      </button >
+        >
+          Zobrazit PDF < Icon name="eye" type="fas" />
+        </button>
+      </div>
     </form >
   );
 };
