@@ -5,11 +5,9 @@ interface DefaultLayoutProps {
   children: ReactNode;
 }
 
-export const DefaultLayout: FC<DefaultLayoutProps> = ({ children }) => {
-  return (
-    <>
-      <Navigation />
-      {children}
-    </>
-  );
-};
+export const DefaultLayout: FC<DefaultLayoutProps> = ({ children }) => (
+  <>
+    <Navigation />
+    {children}
+  </>
+);

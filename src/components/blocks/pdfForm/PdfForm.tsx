@@ -10,13 +10,17 @@ export const PdfForm = () => {
   const [playstyleType, setPlaystyleType] = useState<number>(3);
   const [playRules, setPlayRules] = useState<number>(0);
 
-  const createPdf = useCreatePdf({ teamCount, playstyleType, playRules });
+  const showPdf = useCreatePdf({ teamCount, playstyleType, playRules, showInNewTab: true });
+  const downloadPdf = useCreatePdf({ teamCount, playstyleType, playRules, showInNewTab: false });
 
-  const handleCreatePdf = () => {
-    createPdf();
+  const handleDownloadPdf = () => {
+    downloadPdf();
     setTeamCount(0);
     setPlaystyleType(3);
     setPlayRules(0);
+  };
+  const handleShowPdf = () => {
+    showPdf();
   };
 
   console.log('TeamCount', teamCount);
@@ -24,33 +28,46 @@ export const PdfForm = () => {
   console.log('PlayRules', playRules);
 
   return (
-    <form className="form" onSubmit={createPdf}>
-      {MockUpData.sections.map((section) => {
-        if (section.type === 'radio') {
-          return (
-            <RadioSection
-              key={section.name}
-              name={section.name}
-              title={section.title}
-              section={section}
-              teamCount={teamCount}
-              setTeamCount={setTeamCount}
-              playstyleType={playstyleType}
-              setPlaystyleType={setPlaystyleType}
-              playRules={playRules}
-              setPlayRules={setPlayRules}
-            />
-          );
-        }
-        return null;
-      })}
-      <button
+    <form className="form">
+      {
+        MockUpData.sections.map((section) => {
+          if (section.type === 'radio') {
+            return (
+              <RadioSection
+                key={section.name}
+                name={section.name}
+                title={section.title}
+                section={section}
+                teamCount={teamCount}
+                setTeamCount={setTeamCount}
+                playstyleType={playstyleType}
+                setPlaystyleType={setPlaystyleType}
+                playRules={playRules}
+                setPlayRules={setPlayRules}
+              />
+            );
+          }
+          return null;
+        })
+      }
+      < button
         type="submit"
         className="form__submit-button"
         disabled={teamCount === 0 || playstyleType === 3}
+        onClick={handleDownloadPdf}
+
       >
-        Vytvořit PDF <Icon name="file" type="fas" />
-      </button>
-    </form>
+        Stáhnout PDF < Icon name="file" type="fas" />
+      </button >
+      < button
+        type="button"
+        className="form__submit-button"
+        disabled={teamCount === 0 || playstyleType === 3}
+        onClick={handleShowPdf}
+
+      >
+        Zobrazit PDF < Icon name="eye" type="fas" />
+      </button >
+    </form >
   );
 };
